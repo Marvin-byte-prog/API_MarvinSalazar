@@ -1,0 +1,59 @@
+@ruta = http://localhost:3000
+
+GET {{ruta}}/equipos
+
+###
+POST {{ruta}}/nuevo-equipo
+Content-Type: application/json
+
+{
+    "NombreEquipo": "ecuador",
+    "Ranking": "1",
+    "CopasGanadas": "20",
+    "Informacion": "prueba",
+    "CodigoGrupo": "2"
+}
+
+### Buscar por codigo
+GET {{ruta}}/equipos/1
+
+### Eliminar equipo
+DELETE {{ruta}}/eliminar-equipo/13
+
+### consultar estadios
+
+GET {{ruta}}/calendario
+
+### agregar nuevo estadio
+POST {{ruta}}/addEstadio
+Content-Type: application/json
+
+{
+    "NombreEstadio": "Al Yanub",
+    "Capacidad": "40000",
+    "Descripcion": "Estadio con capacidad para 40,000 espectadores en la ciudad sureña de Al Wakrah, uno de los asentamientos humanos más antiguos de Catar."
+}
+
+### eliminar estadio
+DELETE {{ruta}}/estadio/8
+
+### Buscar por codigo
+GET {{ruta}}/buscarEstadio/6
+
+### AgregarFecha
+POST {{ruta}}/calendario
+Content-Type: application/json
+
+{
+    "Fecha": "2022-10-15",
+    "Hora": "10",
+    "CodigoEquipo": "6",
+    "CodigoEquipo2": "7",
+    "CodigoEstadio": "6",
+    "CodigoGrupo": "1"
+}
+### eliminar fecha
+DELETE {{ruta}}/calendario/4
+
+### consultar resultados
+GET {{ruta}}/resultado
